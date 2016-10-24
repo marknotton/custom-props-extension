@@ -2,7 +2,7 @@
 
   $.customproperty = function(property) {
     return $('body').customproperty(property);
-  }
+  };
 
   $.fn.extend({
     customproperty : function(property) {
@@ -24,7 +24,7 @@
 
               if ($.isNumeric(value)) {
                 value = parseInt(value, 10);
-              };
+              }
 
               properties.push(value);
             });
