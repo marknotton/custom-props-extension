@@ -2,14 +2,13 @@
 
   $.customproperty = function(property) {
     return $('body').customproperty(property);
-  }
+  };
 
   $.fn.extend({
     customproperty : function(property) {
 
-
       // Perform a few checks to make sure the selector that is being checked is valid
-      var selector = this.selector !== undefined && this.selector !== null && $(this.selector).length ? this.selector : null;
+      var selector = this;
 
       if (selector) {
 
@@ -24,7 +23,7 @@
 
               if ($.isNumeric(value)) {
                 value = parseInt(value, 10);
-              };
+              }
 
               properties.push(value);
             });
@@ -38,7 +37,7 @@
           }
         } else {
           // Return all custom properties for this selector
-          return CustomProps.data($(this.selector));
+          return CustomProps.data($(selector));
         }
       }
     }
